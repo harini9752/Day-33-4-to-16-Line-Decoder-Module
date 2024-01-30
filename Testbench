@@ -1,0 +1,25 @@
+module tb_four_to_sixteen_decoder;
+
+  reg [3:0] input;
+  wire [15:0] output;
+
+  four_to_sixteen_decoder uut (
+    .input(input),
+    .output(output)
+  );
+
+  initial begin
+    // Test 1: Decoding input 0101
+    input = 4'b0101;
+    #10 $display("Time=%0t Input=%b Output=%b", $time, input, output);
+
+    // Test 2: Decoding input 1110
+    input = 4'b1110;
+    #10 $display("Time=%0t Input=%b Output=%b", $time, input, output);
+
+    // Add more test cases as needed
+
+    $finish;
+  end
+
+endmodule
